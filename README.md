@@ -5,7 +5,7 @@ chain select by pure javascript fit angularjs
 
 **链式选择插件，兼容Angularjs**
 
-*包含中华人民共和国行政区划代码（2014年版），若需使用，需引入文件citys.js 并做为 selectData 变量传入。*
+*包含中华人民共和国行政区划代码（2014年版），若要使用，需引入文件citys.js 并做为 selectData 变量传入。*
 
 
 #####用法(Usage)：
@@ -37,5 +37,5 @@ chain select by pure javascript fit angularjs
 
     var fillBack = [
       {"id": 2014, "text": 2014},
-      {"id": "08", "text": "08"}
+      {"id": "06", "text": "03"}
     ];
