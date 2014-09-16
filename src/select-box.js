@@ -1,7 +1,6 @@
-'use strict';
-
 (function (window, undefined) {
-
+  'use strict';
+  
   var ElemObj = function () {
     this.init.apply(this, arguments);
   };
