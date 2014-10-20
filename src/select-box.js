@@ -127,6 +127,38 @@
         newArray.push(item[key]);
       });
       return newArray;
+    },
+    genFillById: function (selectData, itemId) {
+      var findItem = function (key, value, array) {
+        for (var i = array.length - 1; i >= 0; i--) {
+          if (array[i][key] == value) {
+            return array[i];
+          }
+        }
+        return null;
+      };
+      var find = function (index, id) {
+        var linkIds = selectData[index].linkIds;
+        var key, findResult;
+        for (key in linkIds) {
+          findResult = findItem('id', id, linkIds[key]);
+          if (findResult) {
+            result.unshift(findResult);
+            if (index > 0) {
+              find(index - 1, key);
+            }
+            return true;
+          }
+        }
+        return false;
+      };
+      var result = [];
+      for (var i = selectData.length - 1; i >= 0; i--) {
+        if (find(i, itemId)) {
+          break;
+        }
+      }
+      return result;
     }
   };
   window.selectBoxs = selectBoxs;

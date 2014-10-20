@@ -19,8 +19,8 @@ chain select by pure javascript fit angularjs
 
     var selectData = [
       {"defaultText": "请选择年份", "linkIds": {"0": [
-        {"id": 2013, "text": 2013},
-        {"id": 2014, "text": 2014}
+        {"id": "2013", "text": "2013"},
+        {"id": "2014", "text": "2014"}
       ]}},
       {"defaultText": "请选择月份", "linkIds": {"2013": [
         {"id": "01", "text": "01"},
@@ -36,6 +36,16 @@ chain select by pure javascript fit angularjs
 #####回填数据格式（可选）：
 
     var fillBack = [
-      {"id": 2014, "text": 2014},
+      {"id": "2014", "text": "2014"},
       {"id": "06", "text": "03"}
     ];
+
+#####附带工具：
+
+>     过滤得到的数据：
+>     selectBoxs.filter('id', fillBack);
+>     结果为：['2014', '06'];
+>     
+>     从ID得到fillBack：
+>     var fillBack = selectBoxs.genFillById(selectData, '06');
+>     结果为：fillBack;
